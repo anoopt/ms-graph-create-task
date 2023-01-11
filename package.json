@@ -1,0 +1,39 @@
+{
+  "name": "ms-graph-create-task",
+  "version": "1.0.0",
+  "description": "A GitHub action which creates a task in a plan",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "package": "ncc build",
+    "all": "npm run build && npm run package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anoopt/ms-graph-create-task.git"
+  },
+  "keywords": [
+    "msgraph",
+    "github",
+    "actions",
+    "task"
+  ],
+  "author": "anoopt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anoopt/ms-graph-create-task/issues"
+  },
+  "homepage": "https://github.com/anoopt/ms-graph-create-task#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@azure/msal-node": "^1.14.6",
+    "@microsoft/microsoft-graph-client": "^3.0.4",
+    "date-fns": "^2.29.3",
+    "isomorphic-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@microsoft/microsoft-graph-types": "^2.25.0",
+    "@types/node": "^18.11.18",
+    "@vercel/ncc": "^0.36.0"
+  }
+}

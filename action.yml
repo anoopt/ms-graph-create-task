@@ -1,0 +1,38 @@
+name: 'Create a task with Microsoft Graph using MSAL'
+description: "Creates a taks in a specified Planner plan and assigns it to a specified user on a specified date."
+author: 'Anoop Tatti'
+branding:
+  icon: 'calendar'
+  color: 'blue'
+inputs:
+  clientId:
+    description: "The Id of the app registration."
+    required: true
+  clientSecret:
+    description: "App registration's secret."
+    required: true
+  tenantId:
+    description: "The Id of your Microsoft 365 tenant."
+    required: true
+  planId:
+    description: "The Id the plan in Planner."
+    required: true
+  title:
+    description: "The title of the task."
+    required: true
+  userId:
+    description: "The Id of the user to whom the task needs to be assigned."
+    required: true
+  bucketId:
+    description: "(Optional) The id of the bucket in which the task needs to be created."
+  dueBy:
+    description: "(Optional) The due date and time of the task (format - yyyy-MM-ddThh:mm:ssZ). If not specified start time will be next week 10:00 GMT."
+  description:
+    description: "(Optional) Short description of the task."
+  priority:
+    description: "(Optional) Priority of the taskPriority of the task. 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'."
+  orderHint:
+    description: "(Optional) The value of order hint. See https://learn.microsoft.com/en-us/graph/api/resources/planner-order-hint-format?view=graph-rest-1.0 for more details. If not specified the value will be ' !'."
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

@@ -1,0 +1,20 @@
+name: "build-test"
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          clientId: ${{ secrets.CLIENT_ID }}
+          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          tenantId: ${{ secrets.TENANT_ID }}
+          planId: ${{ secrets.PLAN_ID }}
+          title: "A new PR has been submitted on ${{ github.repository }} from ${{ github.actor }}. Please review it."
+          userId: "73ebbe8e-be1f-464d-847a-855598310a7d"
