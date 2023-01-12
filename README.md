@@ -22,17 +22,17 @@ In your GitHub repo [create 4 secrets](https://help.github.com/en/actions/automa
 Below is a workflow code
 
 ```workflow
-name: MS Graph Event
+name: Microsoft Graph Task
 
 on: [pull_request]
 
 jobs:
-  create-event:
+  create-task:
     runs-on: ubuntu-latest
-    name: Create Event
+    name: Create Task
     steps:
     - name: Create a task for the user
-      uses: anoopt/ms-graph-create-task@v1
+      uses: anoopt/ms-graph-create-task@v1.0.0
       with:
         clientId: ${{ secrets.CLIENT_ID }}
         clientSecret: ${{ secrets.CLIENT_SECRET }}
@@ -56,19 +56,17 @@ All of the information attached to an event is available in the `github.event` v
 ```
 
 ```workflow
-name: MS Graph Event
+name: Microsoft Graph Task
 
 on: [pull_request]
 
 jobs:
-  create-event:
+  create-task:
     runs-on: ubuntu-latest
     name: Create Task
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
     - name: Create task on the specified date and time
-      uses: anoopt/ms-graph-create-task@v1
+      uses: anoopt/ms-graph-create-task@v1.0.0
       with:
         clientId: ${{ secrets.CLIENT_ID }}
         clientSecret: ${{ secrets.CLIENT_SECRET }}
@@ -79,7 +77,7 @@ jobs:
         bucketId: "Ys2XyYjrnkCQDmOZEJ8KDZcADKs9"
         dueByDate: "2023-01-28"
         dueByTime: "10:00"
-        description: "A new PR has been submitted on ${{ github.repository }} from ${{ github.actor }}. Link to the pull request ${{ github.event.pull_request.html_url }}."
+        description: "A new PR has been submitted on ${{ github.repository }} by ${{ github.actor }}. Link to the pull request ${{ github.event.pull_request.html_url }}."
         priority: "1"
 ```
 
