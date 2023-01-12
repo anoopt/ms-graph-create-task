@@ -25,8 +25,10 @@ inputs:
     required: true
   bucketId:
     description: "(Optional) The id of the bucket in which the task needs to be created."
-  dueBy:
-    description: "(Optional) The due date and time of the task (format - yyyy-MM-ddThh:mm:ssZ). If not specified start time will be next week 10:00 GMT."
+  dueByDate:
+    description: "(Optional) The due date of the task (format - yyyy-MM-dd). If not specified due date time will be next week."
+  dueByTime:
+    description: "(Optional) The due time of the task (format - hh:mm). If not specified due time will be next week 10:00 GMT."
   description:
     description: "(Optional) Short description of the task."
   priority:

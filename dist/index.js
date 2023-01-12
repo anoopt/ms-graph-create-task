@@ -237,11 +237,13 @@ function run() {
         const title = core.getInput('title', { required: true });
         const userId = core.getInput('userId', { required: true });
         const bucketId = core.getInput('bucketId') ? core.getInput('bucketId') : null;
-        const dueBy = core.getInput('dueBy');
+        const dueByDate = core.getInput('dueByDate');
+        const dueByTime = core.getInput('dueByTime');
         const description = core.getInput('description');
         const priority = core.getInput('priority') ? parseInt(core.getInput('priority')) : 5;
         const orderHint = core.getInput('orderHint') ? core.getInput('orderHint') : ' !';
         const graph = new graph_1.default(clientId, clientSecret, tenantId);
+        const dueBy = dueByDate && dueByTime ? `${dueByDate}T${dueByTime}:00Z` : null;
         const nextWeek = (0, date_fns_1.format)((0, date_fns_1.addBusinessDays)(new Date(), 7), 'yyyy-MM-dd');
         const dueDateTime = dueBy ? dueBy : `${nextWeek}T10:00:00Z`;
         let assignments = {};

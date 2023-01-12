@@ -13,7 +13,8 @@ async function run() {
     const title: string = core.getInput('title', { required: true });
     const userId: string = core.getInput('userId', { required: true });
     const bucketId: string = core.getInput('bucketId') ? core.getInput('bucketId') : null;
-    const dueBy: string = core.getInput('dueBy');
+    const dueByDate = core.getInput('dueByDate');
+    const dueByTime = core.getInput('dueByTime');
     const description: string = core.getInput('description');
     const priority: number = core.getInput('priority') ? parseInt(core.getInput('priority')) : 5;
     const orderHint: string = core.getInput('orderHint') ? core.getInput('orderHint') : ' !';
@@ -24,6 +25,7 @@ async function run() {
         tenantId
     );
 
+    const dueBy: string = dueByDate && dueByTime ? `${dueByDate}T${dueByTime}:00Z` : null;
     const nextWeek: string = format(addBusinessDays(new Date(), 7), 'yyyy-MM-dd');
     const dueDateTime: string = dueBy ? dueBy : `${nextWeek}T10:00:00Z`;
 
