@@ -21,6 +21,7 @@ jobs:
           title: "Review pull request."
           userId: "73ebbe8e-be1f-464d-847a-855598310a7d"
           bucketId: "Ys2XyYjrnkCQDmOZEJ8KDZcADKs9"
-          dueBy: 2023-01-29T10:00:00Z
+          dueByDate: "2023-01-29"
+          dueByTime: "10:00"
           description: "A new PR has been submitted on ${{ github.repository }} from ${{ github.actor }}."
           priority: "1"
