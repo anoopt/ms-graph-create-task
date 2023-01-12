@@ -88,3 +88,7 @@ When there is a pull request, the above workflow will create a task for a user w
 ## Task that gets created
 
 ![Task](./assets/endresult.png)
+
+## Other example scenarios
+- Create a task when an issue has been tagged with a specific label
+- Create a task to the marketing team when a new release is created
