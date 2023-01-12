@@ -32,7 +32,7 @@ jobs:
     name: Create Task
     steps:
     - name: Create a task for the user
-      uses: anoopt/ms-graph-create-task@v1.0.0
+      uses: anoopt/ms-graph-create-task@v1
       with:
         clientId: ${{ secrets.CLIENT_ID }}
         clientSecret: ${{ secrets.CLIENT_SECRET }}
@@ -66,7 +66,7 @@ jobs:
     name: Create Task
     steps:
     - name: Create task on the specified date and time
-      uses: anoopt/ms-graph-create-task@v1.0.0
+      uses: anoopt/ms-graph-create-task@v1
       with:
         clientId: ${{ secrets.CLIENT_ID }}
         clientSecret: ${{ secrets.CLIENT_SECRET }}
